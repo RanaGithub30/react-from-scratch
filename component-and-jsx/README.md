@@ -1,11 +1,11 @@
-## React Component Guide
+# React Component Guide
 
-1. What is a Component?
+# 1. What is a Component?
 
 Components are the building blocks of a React app. They are reusable pieces of UI that can display data or interact with the user.
 Example components in this project: Header, UserData, App.
 
-2. Creating a Simple Component
+# 2. Creating a Simple Component
 
 # Create a new file called Hello.js:
 
@@ -32,7 +32,7 @@ Example components in this project: Header, UserData, App.
 
     export default App;
 
-3. Using Dynamic Values (Props)
+# 3. Using Dynamic Values (Props)
 
 Props are inputs to components. They let you pass data from a parent component to a child component.
 
@@ -63,7 +63,7 @@ Props are inputs to components. They let you pass data from a parent component t
 
     export default App;
 
-4. JSX
+# 4. JSX
 
 JSX looks like HTML but is actually JavaScript. You use it to describe your UI:
 
