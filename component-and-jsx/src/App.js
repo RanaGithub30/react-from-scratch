@@ -1,23 +1,8 @@
-import React from "react";
 import Header from "./components/Header";
 import reactLogo from "./assets/logo.png";
-
-/** Add your data here */
-  export const MyData = {
-    name: "Rana Saha",
-    age: 33,
-    city: "Kolkata",
-    country: "India",
-    profession: "Web Developer",
-  }
-
-  export const NewUserData = {
-    name: "Jhon Doe",
-    age: 35,
-    city: "New York",
-    country: "USA",
-    profession: "Web Developer",
-  }
+import { MyData, NewUserData, TechStacksData } from "./data";
+import UserData from "./components/UserData";
+import TechStacks from "./components/TechStacks";
 
 function App() {
   return (
@@ -32,29 +17,27 @@ function App() {
       </main>
 
       {/* Make Components Reusable with Props */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap", // Wrap on small screens
+          gap: "20px",
+          margin: "20px 0",
+        }}
+      >
       <UserData data={MyData} title="About Me" />
       <UserData data={NewUserData} title="About New User" />
-      
+    </div>
+
+      {/* Displaying Tech Stacks */}
+      <TechStacks data={TechStacksData} title="My Tech Stacks" />
+
       <footer style={{ textAlign: "center", padding: "10px", background: "#f0f0f0" }}>
         <p>&copy; 2024 My React App</p>
       </footer>
     </div>
   );
 }
-
-function UserData({data, title}){
-  return(
-    <div style={{ padding: "20px", background: "#f9f9f9", margin: "20px", textAlign: "center" }}>
-        <h3>{title}</h3>
-        <ul style={{ listStyleType: "none", padding: 0 }}>
-          <li><strong>Name:</strong> {data.name}</li>
-          <li><strong>Age:</strong> {data.age}</li>
-          <li><strong>City:</strong> {data.city}</li>
-          <li><strong>Country:</strong> {data.country}</li>
-          <li><strong>Profession:</strong> {data.profession}</li>
-        </ul>
-    </div>  
-  )
-};
 
 export default App;
