@@ -38,6 +38,11 @@ function Header() {
               Login
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/register" style={styles.link}>
+              Register
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

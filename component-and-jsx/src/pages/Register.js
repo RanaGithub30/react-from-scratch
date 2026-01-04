@@ -1,36 +1,48 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
-function Contact() {
+function Register() {
   return (
     <section style={styles.container}>
-      <h2 style={styles.heading}>Contact Me</h2>
+      <h2 style={styles.heading}>Create Account</h2>
       <p style={styles.subtitle}>
-        Have a question or want to work together? Feel free to reach out!
+        Join us by creating a new account.
       </p>
 
       <form style={styles.form}>
         <input
           type="text"
-          placeholder="Your Name"
+          placeholder="Full Name"
           style={styles.input}
         />
 
         <input
           type="email"
-          placeholder="Your Email"
+          placeholder="Email"
           style={styles.input}
         />
 
-        <textarea
-          placeholder="Your Message"
-          rows="5"
-          style={styles.textarea}
+        <input
+          type="password"
+          placeholder="Password"
+          style={styles.input}
+        />
+
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          style={styles.input}
         />
 
         <button type="submit" style={styles.button}>
-          Send Message
+          Register
         </button>
       </form>
+
+      <p style={styles.footerText}>
+        Already have an account?{" "}
+        <span style={styles.link}><NavLink to="/login" style={styles.link}>Login</NavLink></span>
+      </p>
     </section>
   );
 }
@@ -38,7 +50,7 @@ function Contact() {
 const styles = {
   container: {
     padding: "40px 20px",
-    maxWidth: "600px",
+    maxWidth: "420px",
     margin: "0 auto",
     textAlign: "center",
   },
@@ -63,13 +75,6 @@ const styles = {
     borderRadius: "6px",
     border: "1px solid #ccc",
   },
-  textarea: {
-    padding: "12px",
-    fontSize: "14px",
-    borderRadius: "6px",
-    border: "1px solid #ccc",
-    resize: "none",
-  },
   button: {
     padding: "12px",
     border: "none",
@@ -79,6 +84,16 @@ const styles = {
     fontWeight: "600",
     cursor: "pointer",
   },
+  footerText: {
+    marginTop: "20px",
+    fontSize: "14px",
+    color: "#555",
+  },
+  link: {
+    color: "#61dafb",
+    fontWeight: "600",
+    cursor: "pointer",
+  },
 };
 
-export default Contact;
+export default Register;
