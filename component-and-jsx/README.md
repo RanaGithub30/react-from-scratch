@@ -97,3 +97,7 @@ export default Greeting;
     3. Adding events:
 
         onClick={() => alert("Clicked!")} shows how to handle events in JSX.
+
+## Install React Router
+
+npm install react-router-dom

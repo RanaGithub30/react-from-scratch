@@ -1,14 +1,43 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   return (
     <header style={styles.header}>
       <h1 style={styles.title}>My First React App</h1>
+
       <nav>
         <ul style={styles.navList}>
-          <li><a href="#home" style={styles.link}>Home</a></li>
-          <li><a href="#about" style={styles.link}>About</a></li>
-          <li><a href="#contact" style={styles.link}>Contact</a></li>
+          <li>
+            <NavLink to="/" style={styles.link}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" style={styles.link}>
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/projects" style={styles.link}>
+              Projects
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/blog" style={styles.link}>
+              Blog
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" style={styles.link}>
+              Contact
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/login" style={styles.link}>
+              Login
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
@@ -18,25 +47,30 @@ function Header() {
 const styles = {
   header: {
     backgroundColor: "#282c34",
-    padding: "20px",
-    textAlign: "center"
+    padding: "20px 0",
+    textAlign: "center",
   },
   title: {
     color: "#61dafb",
-    margin: 0
+    marginBottom: "15px",
   },
   navList: {
     listStyle: "none",
     padding: 0,
+    margin: 0,
     display: "flex",
     justifyContent: "center",
-    gap: "20px"
+    gap: "25px",
   },
   link: {
     color: "white",
     textDecoration: "none",
-    fontWeight: "bold"
-  }
+    fontWeight: "600",
+    fontSize: "16px",
+    padding: "6px 12px",
+    borderRadius: "6px",
+    transition: "background-color 0.3s",
+  },
 };
 
 export default Header;

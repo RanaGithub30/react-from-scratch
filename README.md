@@ -18,6 +18,21 @@
     🌎 Large Ecosystem – Huge community, third-party libraries, and job demand.
     📱 Cross-Platform – Works for web (React.js) and mobile (React Native).
 
+
+🏗️ How to Set Up a React Project
+
+React App can be set up by Create React App
+
+    # 1. Create a new React app
+    npx create-react-app my-react-app
+
+    # 2. Go into your project folder
+    cd my-react-app
+
+    # 3. Start the development server
+    npm start
+
+
 📂 What’s in this Repository?
 
 This repo is structured to track my learning progress. It includes:
