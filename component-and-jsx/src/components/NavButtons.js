@@ -1,22 +1,38 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavButton({ to, text }) {
   return (
     <li>
-      <Link to={to} style={styles.navButton}>
+      <NavLink
+        to={to}
+        end
+        style={({ isActive }) =>
+          isActive ? styles.active : styles.inactive
+        }
+      >
         {text}
-      </Link>
+      </NavLink>
     </li>
   );
 }
 
 const styles = {
-  navButton: {
-    color: "#fff",
+  inactive: {
+    color: "#aaa",
     backgroundColor: "#444",
     padding: "10px 16px",
     borderRadius: "15px",
     textDecoration: "none",
+    fontWeight: "400",
+    display: "inline-block",
+  },
+  active: {
+    color: "#fff",
+    backgroundColor: "#61dafb",
+    padding: "10px 16px",
+    borderRadius: "15px",
+    textDecoration: "none",
+    fontWeight: "700",
     display: "inline-block",
   },
 };

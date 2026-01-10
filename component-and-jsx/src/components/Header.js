@@ -1,7 +1,16 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 function Header() {
+  const location = useLocation();
+
+  const getLinkStyle = (path) => ({
+    ...styles.link,
+    ...(location.pathname === path
+      ? styles.activeLink
+      : styles.inactiveLink),
+  });
+
   return (
     <header style={styles.header}>
       <h1 style={styles.title}>My First React App</h1>
@@ -9,37 +18,37 @@ function Header() {
       <nav>
         <ul style={styles.navList}>
           <li>
-            <NavLink to="/" style={styles.link}>
+            <NavLink to="/" end style={getLinkStyle("/")}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" style={styles.link}>
+            <NavLink to="/about" style={getLinkStyle("/about")}>
               About
             </NavLink>
           </li>
           <li>
-            <NavLink to="/projects" style={styles.link}>
+            <NavLink to="/projects" style={getLinkStyle("/projects")}>
               Projects
             </NavLink>
           </li>
           <li>
-            <NavLink to="/blog" style={styles.link}>
+            <NavLink to="/blog" style={getLinkStyle("/blog")}>
               Blog
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" style={styles.link}>
+            <NavLink to="/contact" style={getLinkStyle("/contact")}>
               Contact
             </NavLink>
           </li>
           <li>
-            <NavLink to="/login" style={styles.link}>
+            <NavLink to="/login" style={getLinkStyle("/login")}>
               Login
             </NavLink>
           </li>
           <li>
-            <NavLink to="/register" style={styles.link}>
+            <NavLink to="/register" style={getLinkStyle("/register")}>
               Register
             </NavLink>
           </li>
@@ -68,13 +77,21 @@ const styles = {
     gap: "25px",
   },
   link: {
-    color: "white",
     textDecoration: "none",
-    fontWeight: "600",
     fontSize: "16px",
     padding: "6px 12px",
     borderRadius: "6px",
-    transition: "background-color 0.3s",
+    transition: "all 0.3s ease",
+  },
+  inactiveLink: {
+    color: "#aaa",
+    fontWeight: "400",
+    backgroundColor: "transparent",
+  },
+  activeLink: {
+    color: "#fff",
+    fontWeight: "700",
+    backgroundColor: "#61dafb",
   },
 };
 
