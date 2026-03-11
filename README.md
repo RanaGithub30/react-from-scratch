@@ -40,3 +40,26 @@ This repo is structured to track my learning progress. It includes:
     1. Basics of React
     2. Setting up a React project from scratch
     3. Components & JSX
+
+🧠 React State
+
+    State is a built-in React object that allows components to create and manage data that can change over time.
+    When state changes, the component re-renders automatically
+    State is local to a component
+    Helps make UIs dynamic and interactive
+    
+    Example using useState:
+
+    import { useState } from "react";
+
+    function Counter() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+        <p>Count: {count}</p>
+        <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+    );
+    }
+
